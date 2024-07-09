@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aftelklok</title>
+    <title>Aftelklok en Afbeelding</title>
     <style>
         @font-face {
             font-family: 'Dodge';
@@ -28,13 +28,11 @@
         .hearts::before, .hearts::after {
             content: '❤';
         }
-        .dutch-flag::before {
-            content: '🇳🇱';
-            margin-right: 10px;
-        }
+        .dutch-flag::before,
         .dutch-flag::after {
             content: '🇳🇱';
-            margin-left: 10px;
+            margin-right: 10px;
+            display: inline-block; /* Zorg ervoor dat de vlaggen naast de tekst worden weergegeven */
         }
         #countdown {
             font-size: 2em;
@@ -46,6 +44,8 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block; /* Zorg ervoor dat de afbeelding volledig wordt weergegeven */
+            margin: 0 auto; /* Plaats de afbeelding in het midden van de container */
         }
     </style>
 </head>
@@ -55,7 +55,7 @@
     </div>
     <div id="countdown"></div>
     <div id="photo">
-        <img src="https://github.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/blob/a6aa5d91506c90dc6d29f319e65b1aba27c1ea0f/party%20dodge%20youri%20foto.jpg">
+        <img src="https://github.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/blob/a6aa5d91506c90dc6d29f319e65b1aba27c1ea0f/party%20dodge%20youri%20foto.jpg" alt="Dortmund Party Dodge Photo">
     </div>
 
     <script>
@@ -83,4 +83,9 @@
             // If the count down is over, write some text 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "!!! AFFENGEILE PARTY MACHEN !!! 
+                document.getElementById("countdown").innerHTML = "Het evenement is begonnen";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
