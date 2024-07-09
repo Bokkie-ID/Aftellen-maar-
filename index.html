@@ -14,32 +14,21 @@
         }
         h1 {
             font-size: 2em;
-            display: inline-block;
             margin: 0;
             position: relative; /* Zorgt ervoor dat ::before en ::after absoluut gepositioneerd kunnen worden t.o.v. h1 */
         }
-        h1::before, h1::after {
-            content: '';
+        .flag-heart::before, .flag-heart::after {
+            content: '❤';
+            font-size: 1.5em;
             position: absolute;
-            width: 1em;
-            height: 1em;
-            top: 0;
-            display: inline-block;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            top: -0.5em;
+            color: #FFFFFF; /* Witte kleur */
         }
-        h1::before {
+        .flag-heart::before {
             left: -1.5em; /* Links van h1 */
-            transform: rotate(45deg); /* Draai 45 graden */
         }
-        h1::after {
+        .flag-heart::after {
             right: -1.5em; /* Rechts van h1 */
-            transform: rotate(-45deg); /* Draai -45 graden */
-        }
-        h1::before, h1::after {
-            background-color: #21468B; /* Donkerblauw voor Nederlandse vlag */
-        }
-        h1::after {
-            background-color: #FFFFFF; /* Wit voor Nederlandse vlag */
         }
         #countdown {
             font-size: 2em;
@@ -57,7 +46,8 @@
     </style>
 </head>
 <body>
-    <h1>COUNTDOWN Dortmund Party Dodge</h1>
+    <h1>Dortmund Party Dodge <span class="flag-heart"></span></h1>
+    <div id="countdown-text">COUNTDOWN</div>
     <div id="countdown"></div>
     <div id="photo">
         <img src="https://raw.githubusercontent.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/main/partydodgeyourifoto.jpg" alt="Dortmund Party Dodge Photo">
