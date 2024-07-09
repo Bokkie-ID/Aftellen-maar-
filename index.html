@@ -18,11 +18,22 @@
             margin: 0;
         }
         .hearts {
-            font-size: 2em;
+            font-size: 4em;
         }
         .hearts::before, .hearts::after {
-            content: '❤';
-            color: red; /* Kleur van het hartje aanpassen */
+            content: '❤❤❤';
+              color: transparent; /* Tekstkleur transparant maken */
+            position: absolute;
+            top: 0;
+            background-image: linear-gradient(to right, red, white, blue); /* Gradient van links naar rechts */
+            -webkit-background-clip: text; /* Tekstkleur als clippen voor de gradient */
+            background-clip: text;
+        }
+        .hearts::before {
+            left: -1em; /* Plaatsing van de hartjes aan de linkerkant */
+        }
+        .hearts::after {
+            right: -1em; /* Plaatsing van de hartjes aan de rechterkant */
         }
         #countdown {
             font-size: 2em;
