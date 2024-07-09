@@ -47,10 +47,29 @@
             margin-top: 20px;
         }
         img {
-            max-width: 35%;
+            max-width: 40%;
             height: auto;
             display: block; /* Zorg ervoor dat de afbeelding volledig wordt weergegeven */
             margin: 0 auto; /* Plaats de afbeelding in het midden van de container */
+        }
+
+        /* Media query voor kleinere schermen, zoals telefoons */
+        @media only screen and (max-width: 768px) {
+            body {
+                padding: 20px; /* Verklein de padding om meer ruimte te besparen */
+            }
+            h1 {
+                font-size: 1.5em; /* Aangepaste grootte voor h1 op kleinere schermen */
+            }
+            .hearts {
+                font-size: 3em; /* Aangepaste grootte voor de harten op kleinere schermen */
+            }
+            #countdown-container {
+                font-size: 1.5em; /* Aangepaste grootte voor het countdown-container op kleinere schermen */
+            }
+            img {
+                max-width: 100%; /* Zorg ervoor dat de afbeelding de volledige breedte van het scherm gebruikt */
+            }
         }
     </style>
 </head>
