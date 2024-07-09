@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aftelklok</title>
+    <style>
+        @font-face {
+            font-family: 'Dodge';
+            src: url('path/to/dodge-font.woff2') format('woff2'), /* Pas de URL aan naar waar je het lettertype hebt gehost */
+                 url('path/to/dodge-font.woff') format('woff');
+        }
+        body {
+            font-family: 'Dodge', Arial, sans-serif;
+            text-align: center;
+            background-color: #FF7F00; /* Oranje kleur van het Nederlands voetbalelftal */
+            padding: 50px;
+            color: white;
+        }
+        h1 {
+            font-size: 2em;
+            display: inline-block;
+            margin: 0;
+        }
+        .hearts {
+            font-size: 2em;
+        }
+        .hearts::before, .hearts::after {
+            content: '❤';
+        }
+        .dutch-flag::before {
+            content: '🇳🇱';
+            margin-right: 10px;
+        }
+        .dutch-flag::after {
+            content: '🇳🇱';
+            margin-left: 10px;
+        }
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        #photo {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts dutch-flag">
+        <h1>Dortmund Party Dodge</h1>
+    </div>
+    <div id="countdown"></div>
+    <div id="photo">
+        <img src="https://github.com/Bokkie-ID/Aftellen-maar-/blob/2a47f5df4c920f066243054c293e9ecf6628fdf9/party%20dodge%20youri%20foto.jpg">
+    </div>
 
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jul 10, 2024 09:30:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "u " + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Het evenement is begonnen
