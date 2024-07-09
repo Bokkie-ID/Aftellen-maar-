@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aftelklok</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"> <!-- Vervang 'Bangers' met een vergelijkbaar lettertype -->
     <style>
+        @font-face {
+            font-family: 'Dodge';
+            src: url('path/to/dodge-font.woff2') format('woff2'), /* Pas de URL aan naar waar je het lettertype hebt gehost */
+                 url('path/to/dodge-font.woff') format('woff');
+        }
         body {
-            font-family: 'Bangers', Arial, sans-serif; /* Gebruik het Google Fonts-lettertype hier */
+            font-family: 'Dodge', Arial, sans-serif;
             text-align: center;
             background-color: #FF7F00; /* Oranje kleur van het Nederlands voetbalelftal */
             padding: 50px;
@@ -22,7 +26,7 @@
             font-size: 2em;
         }
         .hearts::before, .hearts::after {
-            content: '❤️';
+            content: '❤';
         }
         .dutch-flag::before {
             content: '🇳🇱';
@@ -36,6 +40,13 @@
             font-size: 2em;
             margin-top: 20px;
         }
+        #photo {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +54,9 @@
         <h1>Dortmund Party Dodge</h1>
     </div>
     <div id="countdown"></div>
+    <div id="photo">
+        <img src="https://github.com/Bokkie-ID/Party-dodge/blob/d9419e39f64582a9f3cc8e8eac3491fe755c95bd/043ca44d-bfaa-4ff4-b72a-9cfd22c3c4fe.jpeg">
+    </div>
 
     <script>
         // Set the date we're counting down to
@@ -69,9 +83,4 @@
             // If the count down is over, write some text 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "Het evenement is begonnen!";
-            }
-        }, 1000);
-    </script>
-</body>
-</html>
+                document.getElementById("countdown").innerHTML = "Het evenement is begonnen
