@@ -25,16 +25,21 @@
             height: 1em;
             top: 0;
             display: inline-block;
-            background-color: red; /* Rood hartje */
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
         h1::before {
-            left: -1em; /* Links van h1 */
+            left: -1.5em; /* Links van h1 */
             transform: rotate(45deg); /* Draai 45 graden */
         }
         h1::after {
-            right: -1em; /* Rechts van h1 */
+            right: -1.5em; /* Rechts van h1 */
             transform: rotate(-45deg); /* Draai -45 graden */
+        }
+        h1::before, h1::after {
+            background-color: #21468B; /* Donkerblauw voor Nederlandse vlag */
+        }
+        h1::after {
+            background-color: #FFFFFF; /* Wit voor Nederlandse vlag */
         }
         #countdown {
             font-size: 2em;
