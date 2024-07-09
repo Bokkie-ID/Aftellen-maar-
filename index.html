@@ -15,6 +15,7 @@
         h1 {
             font-size: 2em;
             display: inline-block;
+            position: relative; /* Nodig voor positionering van pseudo-elementen */
             margin: 0;
         }
         .hearts {
@@ -23,6 +24,15 @@
         .hearts::before, .hearts::after {
             content: '❤';
             color: red; /* Kleur van het hartje aanpassen */
+            position: absolute;
+            top: 0;
+            font-size: 2em; /* Grootte van het hartje aanpassen */
+        }
+        .hearts::before {
+            left: -2em; /* Links van h1 */
+        }
+        .hearts::after {
+            right: -2em; /* Rechts van h1 */
         }
         #countdown {
             font-size: 2em;
