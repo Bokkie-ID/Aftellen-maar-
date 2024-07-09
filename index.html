@@ -17,32 +17,24 @@
             display: inline-block;
             margin: 0;
         }
-       .hearts {
+      .hearts {
             font-size: 4em;
             position: relative; /* Zorgt ervoor dat ::before en ::after absoluut worden gepositioneerd binnen .hearts */
         }
         .hearts::before, .hearts::after {
             content: '❤❤❤';
-            color: linear-gradient(to bottom, red, white, blue); /* Tekstkleur transparant maken */
+            color: transparent; /* Tekstkleur transparant maken */
             position: absolute;
-                    }
+            top: 0;
+            background-image: linear-gradient(to bottom, #ff4444, #ffffff, #4477ff); /* Lineaire gradient van boven naar beneden */
+            -webkit-background-clip: text; /* Tekstkleur als clippen voor de gradient */
+            background-clip: text;
+        }
         .hearts::before {
             left: -1em; /* Plaatsing van het eerste hartje aan de linkerkant */
         }
         .hearts::after {
             right: -1em; /* Plaatsing van het eerste hartje aan de rechterkant */
-        }
-        .hearts::before {
-            left: -1em; /* Plaatsing van de hartjes aan de linkerkant */
-        }
-        .hearts::after {
-            right: -1em; /* Plaatsing van de hartjes aan de rechterkant */
-        }
-        .hearts::before {
-            left: -1em; /* Plaatsing van de hartjes aan de linkerkant */
-        }
-        .hearts::after {
-            right: -1em; /* Plaatsing van de hartjes aan de rechterkant */
         }
         #countdown {
             font-size: 2em;
