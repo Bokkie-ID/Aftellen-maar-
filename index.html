@@ -23,13 +23,9 @@
         }
         .hearts::before, .hearts::after {
             content: '❤❤❤';
-            color: transparent; /* Tekstkleur transparant maken */
+            color: linear-gradient(to bottom, red, white, blue); /* Tekstkleur transparant maken */
             position: absolute;
-            top: 0;
-            background-image: linear-gradient(to bottom, red, white, blue); /* Lineaire gradient van boven naar beneden */
-            -webkit-background-clip: text; /* Tekstkleur als clippen voor de gradient */
-            background-clip: text;
-        }
+                    }
         .hearts::before {
             left: -1em; /* Plaatsing van het eerste hartje aan de linkerkant */
         }
