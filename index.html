@@ -37,7 +37,7 @@
             height: 1em;
             background-color: #21468B; /* Donkerblauw */
             position: absolute;
-            top: 0.5em; /* Aanpassen voor juiste positionering */
+            top: 0.15em; /* Aanpassen voor juiste positionering */
             z-index: -1; /* Zorgt ervoor dat de vlag achter de tekst staat */
         }
         .nl-flag::before {
@@ -57,6 +57,7 @@
         #countdown-text {
             display: inline-block;
             vertical-align: middle; /* Verticaal centreren naast de hartjes */
+            margin-right: 10px; /* Afstand tussen h1 en COUNTDOWN */
         }
         #photo {
             margin-top: 20px;
@@ -75,36 +76,4 @@
     <div id="countdown"></div>
     <div id="photo">
         <img src="https://raw.githubusercontent.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/main/partydodgeyourifoto.jpg" alt="Dortmund Party Dodge Photo">
-    </div>
-
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("Jul 10, 2024 09:30:00").getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in an element with id="countdown"
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "u " + minutes + "m " + seconds + "s ";
-
-            // If the count down is over, write some text 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "!!! AFFENGEILE PARTY MACHEN !!!";
-            }
-        }, 1000);
-    </script>
-</body>
-</html>
+    </
