@@ -50,6 +50,92 @@
     </div>
     <div id="countdown"></div>
     <div id="photo">
+        <img src="https://raw.githubusercontent.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/main/partydodgeyourifoto.jpg" alt="Dortmund Party Dodge Photo">
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jul 10, 2024 09:30:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "u " + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "!!! AFFENGEILE PARTY MACHEN !!!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aftelklok en Afbeelding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FF7F00; /* Oranje kleur van het Nederlands voetbalelftal */
+            padding: 50px;
+            color: white;
+        }
+        h1 {
+            font-size: 2em;
+            display: inline-block;
+            margin: 0;
+        }
+        .hearts {
+            font-size: 2em;
+        }
+        .hearts::before, .hearts::after {
+            content: '❤';
+        }
+        .dutch-flag::before,
+        .dutch-flag::after {
+            content: '🇳🇱';
+            margin-right: 10px;
+            display: inline-block; /* Zorg ervoor dat de vlaggen naast de tekst worden weergegeven */
+        }
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        #photo {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Zorg ervoor dat de afbeelding volledig wordt weergegeven */
+            margin: 0 auto; /* Plaats de afbeelding in het midden van de container */
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts dutch-flag">
+        <h1>Dortmund Party Dodge</h1>
+    </div>
+    <div id="countdown"></div>
+    <div id="photo">
         <img src="https://github.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/blob/9e6796920503369d102026330076414417363bb1/partydodgeyourifoto.jpg" alt="partydodgeyourifoto.jpg">
     </div>
 
