@@ -14,50 +14,19 @@
         }
         h1 {
             font-size: 2em;
-            margin: 0;
-            position: relative; /* Zorgt ervoor dat ::before en ::after absoluut gepositioneerd kunnen worden t.o.v. h1 */
-        }
-        .flag-heart::before, .flag-heart::after {
-            content: '❤';
-            font-size: 1.5em;
-            position: absolute;
-            top: -0.5em;
-            color: #FFFFFF; /* Witte kleur */
-        }
-        .flag-heart::before {
-            left: -1.5em; /* Links van h1 */
-        }
-        .flag-heart::after {
-            right: -1.5em; /* Rechts van h1 */
-        }
-        .nl-flag::before, .nl-flag::after {
-            content: '';
             display: inline-block;
-            width: 1em;
-            height: 1em;
-            background-color: #21468B; /* Donkerblauw */
-            position: absolute;
-            top: 0.15em; /* Aanpassen voor juiste positionering */
-            z-index: -1; /* Zorgt ervoor dat de vlag achter de tekst staat */
+            margin: 0;
         }
-        .nl-flag::before {
-            left: -1em; /* Links van h1 */
-            transform: rotate(45deg); /* Draai de vlag voor de linkerzijde */
+        .hearts {
+            font-size: 2em;
         }
-        .nl-flag::after {
-            right: -1em; /* Rechts van h1 */
-            transform: rotate(-45deg); /* Draai de vlag voor de rechterzijde */
+        .hearts::before, .hearts::after {
+            content: '❤';
+            color: red; /* Kleur van het hartje aanpassen */
         }
         #countdown {
             font-size: 2em;
-            display: inline-block; /* Zorgt ervoor dat countdown en COUNTDOWN op dezelfde regel staan */
-            vertical-align: middle; /* Verticaal centreren naast de hartjes */
-            margin-left: 10px; /* Afstand tussen COUNTDOWN en countdown */
-        }
-        #countdown-text {
-            display: inline-block;
-            vertical-align: middle; /* Verticaal centreren naast de hartjes */
-            margin-right: 10px; /* Afstand tussen h1 en COUNTDOWN */
+            margin-top: 20px;
         }
         #photo {
             margin-top: 20px;
@@ -71,9 +40,42 @@
     </style>
 </head>
 <body>
-    <h1>Dortmund Party Dodge <span class="flag-heart"></span><span class="nl-flag"></span><span class="flag-heart"></span></h1>
-    <div id="countdown-text">COUNTDOWN</div>
+    <div class="hearts">
+        <h1>Dortmund Party Dodge</h1>
+    </div>
     <div id="countdown"></div>
     <div id="photo">
         <img src="https://raw.githubusercontent.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/main/partydodgeyourifoto.jpg" alt="Dortmund Party Dodge Photo">
-    </
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jul 10, 2024 09:30:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "u " + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "!!! AFFENGEILE PARTY MACHEN !!!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
