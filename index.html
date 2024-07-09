@@ -30,9 +30,33 @@
         .flag-heart::after {
             right: -1.5em; /* Rechts van h1 */
         }
+        .nl-flag::before, .nl-flag::after {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-color: #21468B; /* Donkerblauw */
+            position: absolute;
+            top: 0.5em; /* Aanpassen voor juiste positionering */
+            z-index: -1; /* Zorgt ervoor dat de vlag achter de tekst staat */
+        }
+        .nl-flag::before {
+            left: -1em; /* Links van h1 */
+            transform: rotate(45deg); /* Draai de vlag voor de linkerzijde */
+        }
+        .nl-flag::after {
+            right: -1em; /* Rechts van h1 */
+            transform: rotate(-45deg); /* Draai de vlag voor de rechterzijde */
+        }
         #countdown {
             font-size: 2em;
-            margin-top: 20px;
+            display: inline-block; /* Zorgt ervoor dat countdown en COUNTDOWN op dezelfde regel staan */
+            vertical-align: middle; /* Verticaal centreren naast de hartjes */
+            margin-left: 10px; /* Afstand tussen COUNTDOWN en countdown */
+        }
+        #countdown-text {
+            display: inline-block;
+            vertical-align: middle; /* Verticaal centreren naast de hartjes */
         }
         #photo {
             margin-top: 20px;
@@ -46,7 +70,7 @@
     </style>
 </head>
 <body>
-    <h1>Dortmund Party Dodge <span class="flag-heart"></span></h1>
+    <h1>Dortmund Party Dodge <span class="flag-heart"></span><span class="nl-flag"></span><span class="flag-heart"></span></h1>
     <div id="countdown-text">COUNTDOWN</div>
     <div id="countdown"></div>
     <div id="photo">
