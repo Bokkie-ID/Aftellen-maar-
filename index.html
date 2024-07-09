@@ -17,7 +17,14 @@
             display: inline-block;
             margin: 0;
         }
-      .hearts {
+        #countdown-container {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        #countdown {
+            display: inline-block; /* Zorgt ervoor dat het countdown element naast h1 wordt weergegeven */
+        }
+        .hearts {
             font-size: 4em;
             position: relative; /* Zorgt ervoor dat ::before en ::after absoluut worden gepositioneerd binnen .hearts */
         }
@@ -36,15 +43,11 @@
         .hearts::after {
             right: -1em; /* Plaatsing van het eerste hartje aan de rechterkant */
         }
-        #countdown {
-            font-size: 2em;
-            margin-top: 20px;
-        }
         #photo {
             margin-top: 20px;
         }
         img {
-            max-width: 60%;
+            max-width: 35%;
             height: auto;
             display: block; /* Zorg ervoor dat de afbeelding volledig wordt weergegeven */
             margin: 0 auto; /* Plaats de afbeelding in het midden van de container */
@@ -55,7 +58,10 @@
     <div class="hearts">
         <h1>Dortmund Party Dodge</h1>
     </div>
-    <div id="countdown"></div>
+    <div id="countdown-container">
+        <h2 id="countdown">Countdown: </h2>
+        <div id="countdown"></div>
+    </div>
     <div id="photo">
         <img src="https://raw.githubusercontent.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/main/partydodgeyourifoto.jpg" alt="Dortmund Party Dodge Photo">
     </div>
