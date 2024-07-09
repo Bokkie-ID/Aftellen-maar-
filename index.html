@@ -16,13 +16,25 @@
             font-size: 2em;
             display: inline-block;
             margin: 0;
+            position: relative; /* Zorgt ervoor dat ::before en ::after absoluut gepositioneerd kunnen worden t.o.v. h1 */
         }
-        .hearts {
-            font-size: 2em;
+        h1::before, h1::after {
+            content: '';
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            top: 0;
+            display: inline-block;
+            background-color: red; /* Rood hartje */
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
-        .hearts::before, .hearts::after {
-            content: '❤';
-            color: red; /* Kleur van het hartje aanpassen */
+        h1::before {
+            left: -1em; /* Links van h1 */
+            transform: rotate(45deg); /* Draai 45 graden */
+        }
+        h1::after {
+            right: -1em; /* Rechts van h1 */
+            transform: rotate(-45deg); /* Draai -45 graden */
         }
         #countdown {
             font-size: 2em;
@@ -40,9 +52,7 @@
     </style>
 </head>
 <body>
-    <div class="hearts">
-        <h1>Dortmund Party Dodge</h1>
-    </div>
+    <h1>COUNTDOWN Dortmund Party Dodge</h1>
     <div id="countdown"></div>
     <div id="photo">
         <img src="https://raw.githubusercontent.com/Bokkie-ID/Dortmund-Party-Dodge-countdown/main/partydodgeyourifoto.jpg" alt="Dortmund Party Dodge Photo">
